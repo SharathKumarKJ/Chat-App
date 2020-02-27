@@ -11,7 +11,8 @@ const { addUser, removeUser, getUser, getUsersInRoom } = require('./utils/users'
 const app = express()
 const server = http.createServer(app)
 const io = socketio(server)
-const portNumber = 8081;
+const portNumber = process.env.PORT || 8081
+
 app.use(express.json())
 
 
