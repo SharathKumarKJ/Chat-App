@@ -16,6 +16,8 @@ const sidebarTemplate = document.querySelector('#sidebar-template').innerHTML
 
 //options
 const { username, room } = Qs.parse(location.search, { ignoreQueryPrefix: true })
+
+
 const autoscroll = () => {
     //New message Element
     const $newMessage = $messages.lastElementChild
@@ -39,7 +41,7 @@ const autoscroll = () => {
     if (containerHeight - newMessageHeight <= scrollOffset) {
         $messages.scrollTop = $messages.scrollHeight
     }
-    console.log('Auto Scroll running')
+    $messages.scrollTop = $messages.scrollHeight
 }
 
 socket.on('message', (message) => {
